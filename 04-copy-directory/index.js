@@ -1,6 +1,5 @@
 const path = require('path');
 const fs = require('fs');
-// const { dir } = require('console');
 
 
 function createDir (dirName) {
@@ -17,7 +16,7 @@ function createFile(fileName, dirName) {
         filePath, '',
         (err) => {
             if (err) throw err;
-    }
+        }
     )
 }
 
