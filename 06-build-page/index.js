@@ -1,28 +1,10 @@
 const path = require('path');
 const fs = require('fs');
 
+
 function createDir (pathToDir) {
     const fsPromises = fs.promises;
     fsPromises.mkdir(pathToDir, { recursive: true });
-    // clearDir(pathToDir);
-}
-
-function clearDir (pathToDir) {
-    let newDirArrray;
-
-    fs.readdir(pathToDir,  { withFileTypes: true }, (err, files) => {
-        if (err) throw err;
-        newDirArrray = files;
-
-        for (let i = 0; i < newDirArrray.length; i++ ) {
-            if (newDirArrray[i].isFile()) {
-                let currentFile = path.join(pathToDir, newDirArrray[i].name );
-                fs.unlink(currentFile, err => {
-                    if(err) throw err;
-                });
-            }
-        }
-    })
 }
 
 

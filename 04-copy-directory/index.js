@@ -32,7 +32,7 @@ function clearDir () {
         for (let i = 0; i < newDirArrray.length; i++ ) {
             let currentFile = path.join(newDir, newDirArrray[i].name )
             fs.unlink(currentFile, err => {
-                if(err) throw err; // не удалось удалить файл
+                if(err) throw err;
             });
         }
     })
@@ -59,14 +59,13 @@ function copyDirectory () {
                 let pathOldFile = path.join(oldDir, filesArray[i].name);
                 
                 fs.copyFile(pathOldFile, pathNewFile, err => {
-                    if(err) throw err; // не удалось скопировать файл
+                    if(err) throw err;
                 });
             } else {
                 
             }
         }
     })
-    // comparisonDir ()
 }
 
 copyDirectory()
